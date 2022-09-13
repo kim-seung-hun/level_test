@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="one">one</div>
+    <div id="two">two</div>
+  </body>
+  <script>
+    const one = document.getElementById("one");
+
+    one.addEventListener("click", function () {
+      const two = document.getElementById("two");
+      two.remove();
+      console.log(two);
+    });
+
+    // two를 전역변수로 선언한 후 remove()를 하면 body에선 요소가 삭제 되지만 메모리는 남아있어 참조를 계속 할 수 있다.
+    // two를 function 안에 지역변수로 선언하면 해당 DOM이 종료되면 메모리가 삭제되므로 더이상 참조하지 못한다.
+  </script>
+</html>
